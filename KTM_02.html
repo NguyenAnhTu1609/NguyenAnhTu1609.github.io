@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    section {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+    }
+    .container {
+        display: flex;
+        width: 60rem;
+        height: 30rem;
+        margin: auto;
+        color: yellow;
+        
+    }
+    .input-data {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 2em;
+        background-image: url("https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+    }
+    input[type="submit"],
+    input[type="reset"] {
+        width: 10rem;
+        padding: .9em 0;
+    }
+    form > *,
+    content > * {
+        padding-bottom: 1em;
+    }
+    .flex {
+        display: flex;
+    }
+    .gender > * {
+        padding-left: 2em;
+    }
+    .hobby {
+        flex-direction: column;
+    }
+    .hobby > * {
+        padding-left: 2em;
+        padding-bottom: .5em;
+    }
+    .button {
+        padding: 0;
+    }
+    .output-data {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        background-image: url("https://images.unsplash.com/photo-1657028839198-0b91c632f38d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTB8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60");
+        
+    }
+    .content > * {
+        padding-left: 2em;
+        padding-bottom: 1em;
+    }
+    @media (max-width: 60rem) {
+        .container {
+            flex-direction: column;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 15rem;
+        }
+    }
+</style>
+<body>
+    <section>
+        <div class="container">
+            <div class="input-data">
+                <form id="user-detail">
+
+                    <div class="name">
+                        <label for="name">Tên:</label>
+                        <input type="text" id="Minh">
+                    </div>
+                    <div class="email">
+                        <label for="name">Email:</label>
+                        <input type="text" id="aa@gmail.com">
+                    </div>
+
+                    <label for="gender">Giới tính</label>
+                    <div class="flex gender">
+                        <div class="Nam">
+                            <input type="radio" name="gender" value="Nam" id="user-gender">
+                            <label for="Nam">Nam</label>
+                        </div>
+                        <div class="Nữ">
+                            <input type="radio" name="gender" value="Nữ" id="user-gender">
+                            <label for="Nữ">Nữ</label>
+                        </div>
+                        
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Chấp nhận" id="submit">
+                        <input type="reset" value="Hủy" id="reset">
+                    </div>
+                </form>
+            </div>
+
+            <div class="output-data">
+                <div class="content">
+                    <p class="content-name">Tên</p>
+                    <p class="content-email">Email</p>
+                    <p class="content-gender">Giới tính</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+<script>
+    const form = document.getElementById('user-detail').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('sothunhat').value;
+        document.querySelector('.content-name').textContent = 'CHẤP NHẬN' : ${name}`;
+
+        const email = document.getElementById('sothuhai').value;
+        document.querySelector('.content-email').textContent =;
+
+        const genders = document.getElementsByName('gender');
+        genders.forEach(gender => {
+            if (gender.checked == true) {
+                document.querySelector('.content-gender').textContent = ;
+            };
+        
+
+        });
+    });
+</script>
+</html>
